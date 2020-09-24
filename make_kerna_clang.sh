@@ -20,7 +20,7 @@ KERNEL_DIR=$PWD
 REPACK_DIR=$KERNEL_DIR/zip
 OUT=$KERNEL_DIR/output
 ZIP_NAME="$VERSION"-"$DATE"
-VERSION="Miui-Castagna"
+VERSION="Fenix-"
 DATE=$(date +%Y%m%d-%H%M)
 
 export ARCH=arm64
@@ -46,7 +46,7 @@ make_zip()
                 #cp $KERNEL_DIR/output/arch/arm64/boot/dts/qcom/sd* $REPACK_DIR/dtbs/
                 cp $KERNEL_DIR/output/arch/arm64/boot/Image.gz-dtb $REPACK_DIR/
                 cp $KERNEL_DIR/output/arch/arm64/boot/dts/qcom/trinket.dtb $REPACK_DIR/
-		FINAL_ZIP="Fenix-${VERSION}-${DATE}.zip"
+		FINAL_ZIP="Autumn_Leaf-${VERSION}-${DATE}.zip"
         zip -r9 "${FINAL_ZIP}" *
 		cp *.zip $OUT
 		rm *.zip
