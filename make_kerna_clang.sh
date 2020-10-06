@@ -45,7 +45,6 @@ make_zip()
                 rm $KERNEL_DIR/output/arch/arm64/boot/dts/qcom/modules.order
                 #cp $KERNEL_DIR/output/arch/arm64/boot/dts/qcom/sd* $REPACK_DIR/dtbs/
                 cp $KERNEL_DIR/output/arch/arm64/boot/Image.gz-dtb $REPACK_DIR/
-                cp $KERNEL_DIR/output/arch/arm64/boot/dtbo.img $REPACK_DIR/
                 cp $KERNEL_DIR/output/arch/arm64/boot/dts/qcom/trinket.dtb $REPACK_DIR/
 		FINAL_ZIP="Fenix-${VERSION}-${DATE}.zip"
         zip -r9 "${FINAL_ZIP}" *
@@ -55,7 +54,6 @@ make_zip()
                 rm -rf dtbs
 		cd $KERNEL_DIR
 		rm output/arch/arm64/boot/Image.gz-dtb
-		rm output/arch/arm64/boot/dtbo.img
 		rm output/arch/arm64/boot/dts/qcom/trinket.dtb
 }
 
@@ -68,7 +66,6 @@ BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
 rm -rf zip/kernel
 rm -rf zip/Image.gz-dtb
-rm -rf zip/dtbo.img
 rm -rf zip/trinket.dtb
 rm -rf zip/dtbs
 echo -e ""
