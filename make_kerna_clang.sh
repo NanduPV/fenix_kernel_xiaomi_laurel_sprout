@@ -47,7 +47,7 @@ make_zip()
                 cp $KERNEL_DIR/output/arch/arm64/boot/Image.gz-dtb $REPACK_DIR/
                 cp $KERNEL_DIR/output/arch/arm64/boot/dtbo.img $REPACK_DIR/
                 cp $KERNEL_DIR/output/arch/arm64/boot/dts/qcom/trinket.dtb $REPACK_DIR/
-		FINAL_ZIP="Chasing_Spring-${VERSION}-${DATE}.zip"
+		FINAL_ZIP="Oss_Chasing_Spring-${VERSION}-${DATE}.zip"
         zip -r9 "${FINAL_ZIP}" *
 		cp *.zip $OUT
 		rm *.zip
